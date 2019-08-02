@@ -1,0 +1,25 @@
+.books div img{
+	width:84px;
+}
+.books{
+	margin-left: 30%;
+	display: flex;
+	/*margin: 40px;*/
+	border: 1px;
+	border-color: grey;
+	padding: 20px;
+}
+.books div{
+	display: inline-block;
+}
+.tb{
+	padding-left: 10%;
+	width: 80%;
+}
+.abs{
+	padding-left:  40px;
+	display: flex;	
+}
+.abs button{
+	display: inline-block;
+}

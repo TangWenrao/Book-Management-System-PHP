@@ -14,7 +14,7 @@ if ($id1 == ''||$psd1 == '') {
     while($row = $result->fetch_assoc()) {
         // echo "id: " . $row["id"]. " - Name: " . $row["password"]. "<br>";
         if ($psd1 == $row["password"]) {
-        	echo "<script>alert('登录成功');window.location.href = 'index1.php';</script>";
+        	echo "<script>alert('登录成功');window.location.href = 'index3.php';</script>";
         }else{
         	echo "<script>alert('密码错误');window.location.href = 'login.php';</script>";
         }

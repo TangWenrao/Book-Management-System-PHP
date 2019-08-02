@@ -1,11 +1,12 @@
 <?php
 include 'conn.php';
-$str = "欢迎 " . $_COOKIE["user"] . "! ";
-if (isset($_COOKIE["user"]))
-	echo "<script>alert('".$str."');</script>";
+$str = "欢迎 " . $_COOKIE["admin"] . "! ";
+if (isset($_COOKIE["admin"])){
+	// echo "<script>alert('".$str."');</script>";
+}
 else
     echo "<script>alert('请先登录');window.location.href = 'index1.php';</script>";
-$sql = "select name,writer,publisher,ISBN,ims from book;";
+$sql = "select * from book;";
 $res = $conn -> query($sql);
 // var_dump($res);
 if ($res -> num_rows >0) {
@@ -41,7 +42,8 @@ if ($res -> num_rows >0) {
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<div class="nav">
 					<ul id="global-nav" class="nav navbar-nav  home_top_nav navbar-right">
-					<li><a href="javascript:;" id="nav2-event"><?php echo $_COOKIE["user"]; ?></a></li>
+					<li><a href="upload.php" id="nav2-event">导入图书</a></li>
+					<!-- <li><a href="upload.php" id="nav2-event">导入图书</a></li> -->
 					<li><a href="logout.php" id="nav2-product">退出</a></li>
 					</ul>
 				</div>
@@ -63,6 +65,16 @@ if ($res -> num_rows >0) {
 						<div>
 							<img src="upload/<?php echo $v["ims"];?>">
 						</div>
+						
+						<div class="abs">
+					    	
+					        	<button class="fix"><a href="edit.php?num=<?php echo $v['num']; ?>" >修改</a></button>
+					    	
+					        	<button class="delete"><a href="delete.php?num=<?php echo $v['num']; ?>" onclick="return confirm('确定删除吗');">删除</a></button>
+					    	
+					    </div>
+						
+						
 					</div>
 				<?php } ?>
 			</div>

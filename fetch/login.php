@@ -14,7 +14,7 @@
    			<li ><a href="#home" data-toggle="tab">管理员登录</a></li>
    			<li class="active"><a href="#ios" data-toggle="tab">用户登录</a></li>
    		</ul>
-   		<div id="myTabContent" class="tab-content">
+   		<div id="myTabContent" class="tab-content" style="padding-top: 80px;">
    			<div class="tab-pane fade" id="home">
    				<div>
    					<form class="form-horizontal" action="cklog.php" method="post">
